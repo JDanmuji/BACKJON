@@ -20,9 +20,7 @@ public class Main {
 
 
         int result1 =  Math.min((w-x), (h-y));
-        int result2 =  Math.min((x-0), Math.min((y-0), Math.min((w-0), (h-0))));
-
-
+        int result2 =  Math.min((x-0), Math.min((y-0), Math.min((w-0), (h-0)));ss
 
         System.out.println(Math.min(result1, result2));
 

@@ -18,7 +18,10 @@ public class B_1085 {
         int w = Integer.parseInt(numList[2]);
         int h = Integer.parseInt(numList[3]);
 
-
+        // 1 ≤ w, h ≤ 1,000
+        //1 ≤ x ≤ w-1
+        //1 ≤ y ≤ h-1
+        //x, y, w, h는 정수
         int result1 =  Math.min((w-x), (h-y));
         int result2 =  Math.min((x-0), Math.min((y-0), Math.min((w-0), (h-0))));
 
