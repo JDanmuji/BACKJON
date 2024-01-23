@@ -1,13 +1,11 @@
+package Bronze;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.nio.Buffer;
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.StringTokenizer;
 
-public class Main {
+public class B_2609 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,5 +33,5 @@ public class Main {
 
         return getGCD(num2, num1%num2);
     }
-
+    
 }
