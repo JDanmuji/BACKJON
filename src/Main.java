@@ -12,28 +12,66 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-      //  String numList[] = br.readLine().split(" ");
-        
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int num1 = Integer.parseInt(st.nextToken());
-        int num2 = Integer.parseInt(st.nextToken());
-    
-        int gcd = getGCD(num1, num2); 
-        //int lcm = (num1*num2)/gcd;
+        int height = Integer.parseInt(st.nextToken());
+        int width = Integer.parseInt(st.nextToken());
+        int countH = 0;
+        int countW = 0;
+        int resultH = 0;
+        int resultW = 0;
+        int result = 0;
 
-        System.out.println(gcd);
-        System.out.println(((num1*num2)/gcd));
-        
-    }
+        char[][] castle = new char[height][width];
+                
 
-    private static int getGCD(int num1, int num2) {
+        for(int i = 0; i < height; i++) {
+            for(int j = 0; j < width; j++) {
+                castle[i][j] = (char) br.read();
+            }
+            br.readLine();
+        }
        
-        if(num1%num2 == 0) {
-            return num2;
+        for(int i = 0; i < height; i++) {
+            
+            for(int j = 0; j < width; j++) {
+               if (castle[i][j] == '.') {
+                countW++;
+               }
+            }
+
+            if (countW == width) {
+                resultW++;
+            }
+
+            countW = 0;
+
         }
 
-        return getGCD(num2, num1%num2);
+
+        
+        for(int i = 0; i < width; i++) {
+            
+            for(int j = 0; j < height; j++) {
+               if (castle[j][i] == '.') {
+                    countH++;
+               }
+            }
+
+            if (countH == width) {
+                resultH++;
+            }
+
+            countH = 0;
+
+        }
+  
+
+      
+        System.out.println(resultW == resultH ? resultW : resultW + (resultW - resultH));
+      
     }
+
+
 
 }
