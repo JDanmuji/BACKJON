@@ -12,64 +12,23 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        int len = Integer.parseInt(br.readLine());
+   //     int numList[] = new int[len];
+        List<Integer> numList1 = new ArrayList<Integer>();
 
-        int height = Integer.parseInt(st.nextToken());
-        int width = Integer.parseInt(st.nextToken());
-        int countH = 0;
-        int countW = 0;
-        int resultH = 0;
-        int resultW = 0;
-        int result = 0;
-
-        char[][] castle = new char[height][width];
-                
-
-        for(int i = 0; i < height; i++) {
-            for(int j = 0; j < width; j++) {
-                castle[i][j] = (char) br.read();
-            }
-            br.readLine();
+        for(int i = 0; i < len; i++) {
+            numList1.add(Integer.parseInt(br.readLine()));
         }
-       
-        for(int i = 0; i < height; i++) {
-            
-            for(int j = 0; j < width; j++) {
-               if (castle[i][j] == '.') {
-                countW++;
-               }
-            }
-
-            if (countW == width) {
-                resultW++;
-            }
-
-            countW = 0;
-
-        }
-
 
         
-        for(int i = 0; i < width; i++) {
-            
-            for(int j = 0; j < height; j++) {
-               if (castle[j][i] == '.') {
-                    countH++;
-               }
-            }
 
-            if (countH == width) {
-                resultH++;
-            }
+        Collections.sort(numList1);
 
-            countH = 0;
-
+        for(int num : numList1) {
+            System.out.println(num);
         }
-  
 
-      
-        System.out.println(resultW == resultH ? resultW : resultW + (resultW - resultH));
-      
+        
     }
 
 
